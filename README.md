@@ -56,20 +56,6 @@ Una calculadora funcional construida con React, diseñada para cálculos básico
   - Paréntesis: Para expresiones complejas.
   - Memoria: Almacena y recupera valores.
 
-## Estructura del Proyecto
-
-```
-calculadora-react/
-├── public/                 # Archivos públicos
-├── src/                    # Código fuente
-│   ├── components/         # Componentes de React
-│   ├── styles/             # Archivos CSS
-│   ├── App.jsx             # Componente principal
-│   └── main.jsx            # Punto de entrada
-├── package.json            # Dependencias y scripts
-├── vite.config.js          # Configuración de Vite
-└── README.md               # Documentación del proyecto
-```
 
 ## Scripts Disponibles
 
