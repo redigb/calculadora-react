@@ -1,14 +1,17 @@
 import { useState } from 'react'
-
+import CalculatorButtons from './components/botons'
 
 function App() {
   
+  const handleResult = (result) => {
+    console.log('Result:', result);
+    // Aquí puedes manejar el resultado (e.g., mostrarlo en otro lugar)
+  };
 
   return (
-    <>
-      <h1 className='text-xl'> Calculadora - con react </h1>
-    </>
-  )
+    <div>
+      <CalculatorButtons onResult={handleResult} />
+    </div>
+  );
 }
-
 export default App
