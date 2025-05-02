@@ -1,0 +1,330 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #333333 50%, #4d4d4d 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fondo con textura de pandas */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 0h100v100H0z' fill='none' stroke='%23333333' stroke-width='0.5' opacity='0.1'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%23ffffff' opacity='0.2'/%3E%3Ccircle cx='90' cy='90' r='5' fill='%23ffffff' opacity='0.2'/%3E%3C/svg%3E") repeat;
+  animation: moveBackground 20s linear infinite;
+  z-index: -1;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 450px;
+  width: 100%;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+  border: 3px solid #333333;
+  position: relative;
+  overflow: hidden;
+  animation: float 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Panda animado principal */
+.panda-container {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+.panda {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 3px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: bounce 2s infinite;
+}
+
+.panda::before, .panda::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #333;
+  border-radius: 50%;
+  top: 15px;
+}
+
+.panda::before {
+  left: 5px;
+  transform: rotate(15deg);
+}
+
+.panda::after {
+  right: 5px;
+  transform: rotate(-15deg);
+}
+
+.panda .eyes {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  top: 35px;
+  left: 25px;
+  box-shadow: 20px 0 0 #333;
+  animation: blink 3s infinite;
+}
+
+.panda .nose {
+  position: absolute;
+  width: 12px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.panda .ears {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #333;
+  border-radius: 50%;
+  top: -10px;
+  left: 0;
+  box-shadow: 50px 0 0 #333;
+}
+
+/* Pandas pequeños en las esquinas */
+.panda-decor-top-left, .panda-decor-bottom-right {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+}
+
+.panda-decor-top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.panda-decor-bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
+
+.panda-small {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+
+.panda-small::before, .panda-small::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #333;
+  border-radius: 50%;
+  top: 7px;
+}
+
+.panda-small::before {
+  left: 2px;
+  transform: rotate(15deg);
+}
+
+.panda-small::after {
+  right: 2px;
+  transform: rotate(-15deg);
+}
+
+.panda-small .eyes {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #333;
+  border-radius: 50%;
+  top: 17px;
+  left: 12px;
+  box-shadow: 10px 0 0 #333;
+  animation: blink 3s infinite;
+}
+
+.panda-small .nose {
+  position: absolute;
+  width: 6px;
+  height: 4px;
+  background: #333;
+  border-radius: 50%;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.display {
+  grid-column: 1 / -1;
+  padding: 25px;
+  font-size: 32px;
+  text-align: right;
+  background: linear-gradient(135deg, #d3d3d3, #b0b0b0);
+  color: #333;
+  border-radius: 15px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border: 2px solid #333333;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.history {
+  grid-column: 1 / -1;
+  font-size: 16px;
+  color: #333;
+  height: 70px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #e0e0e0, #d3d3d3);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #333333;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-row {
+  display: contents;
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  padding: 20px;
+  font-size: 22px;
+  border: none;
+  background: linear-gradient(145deg, #d3d3d3, #b0b0b0); /* Blanco/gris claro */
+  color: #333;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transition: height 0.3s ease;
+}
+
+.btn:hover::after {
+  height: 100%;
+  top: 0;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 2px 6px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(145deg, #e0e0e0, #cccccc);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clear {
+  background: linear-gradient(145deg, #333333, #4d4d4d); /* Negro/gris oscuro */
+  color: #ffffff;
+}
+
+.clear:hover {
+  background: linear-gradient(145deg, #4d4d4d, #666666);
+}
+
+.operator {
+  background: linear-gradient(145deg, #b0b0b0, #999999); /* Gris medio */
+}
+
+.operator:hover {
+  background: linear-gradient(145deg, #999999, #808080);
+}
+
+.function {
+  background: linear-gradient(145deg, #999999, #808080); /* Gris más oscuro */
+}
+
+.function:hover {
+  background: linear-gradient(145deg, #808080, #666666);
+}
+
+.btn:disabled {
+  background: linear-gradient(145deg, #666666, #4d4d4d);
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn:focus {
+  outline: none;
+  border: 2px solid #333333;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2); }
+  50% { box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes blink {
+  0%, 90% { transform: scaleY(1); }
+  95% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes moveBackground {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
+}

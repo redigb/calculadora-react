@@ -1,4 +1,6 @@
 import CalculadoraView from "./components/CalculadoraView";
+import CalculatorButtons from "./components/CalculatorButtons";
+
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import './css/fondo.css'
@@ -25,8 +27,8 @@ function App() {
           {/* Contenido principal con las rutas */}
           <main className="main-content">
             <Routes>
-              <Route path="/" element={<CalculadoraView />} /> {/* Ruta principal */}
-             
+              <Route path="/" element={<CalculadoraView />} /> 
+              <Route path="/puro-css" element={<CalculatorButtons />} /> 
             </Routes>
           </main>
   
