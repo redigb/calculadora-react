@@ -6,6 +6,8 @@ import { Button } from './Button';
 
 import './styleCalculadora.css'
 
+import '../tailwin.css';
+
 const CalculadoraView = () => {
 
     // Hook
