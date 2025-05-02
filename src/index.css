@@ -4,8 +4,9 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #f0f4f8, #e6f0fa);
+  background: linear-gradient(135deg, #e6f0fa 0%, #f0f4f8 50%, #add8e6 100%);
   overflow: hidden;
+  position: relative;
 }
 
 .calculator-buttons {
@@ -22,6 +23,7 @@ body {
   position: relative;
   overflow: hidden;
   animation: float 4s ease-in-out infinite;
+  z-index: 1;
 }
 
 /* Panda animado */
@@ -236,4 +238,9 @@ body {
   0%, 90% { transform: scaleY(1); }
   95% { transform: scaleY(0); }
   100% { transform: scaleY(1); }
+}
+
+@keyframes moveBackground {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
 }
