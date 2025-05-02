@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); 
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    background-color: white;
+  }
+  
+  /* Encabezado con color */
+  .main-header {
+    background-color: #ff69b4; 
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  /* Contenido principal (sin fondo) */
+  .main-content {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  
+  /* Pie de página con color */
+  .main-footer {
+    background-color: #ff69b4; 
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  
