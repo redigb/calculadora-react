@@ -1,13 +1,41 @@
 import CalculadoraView from "./components/CalculadoraView";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-
-
+import './css/fondo.css'
 
 function App() {
   return (
-    <div>
-      <CalculadoraView />
-    </div>
+      <Router>
+        <div className="app-container">
+          {/* Encabezado con navegación */}
+          <header className="main-header">
+            <h1>Calculadora - con React</h1>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Calculadora</Link> 
+                </li>
+                <li>
+                  <Link to="/otra-vista">Otra Vista</Link> 
+                </li>
+              </ul>
+            </nav>
+          </header>
+  
+          {/* Contenido principal con las rutas */}
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<CalculadoraView />} /> {/* Ruta principal */}
+             
+            </Routes>
+          </main>
+  
+          {/* Pie de página */}
+          <footer className="main-footer">
+            <p>© 2025 - Desarrollado por [react.devs]</p>
+          </footer>
+        </div>
+      </Router>
   )
 }
 
