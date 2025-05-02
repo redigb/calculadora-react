@@ -34,6 +34,15 @@
     height: 100%;      /* Asegura que el contenido ocupe el 100% de la altura del contenedor */
     width: 100%;       /* Asegura que el contenido ocupe el 100% del ancho del contenedor */
     box-sizing: border-box; /* Asegura que el padding no haga que el contenido se desborde */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 50%, #4d4d4d 100%);
+    overflow: hidden;
+    position: relative;
   }
   /* Pie de página con color */
   .main-footer {

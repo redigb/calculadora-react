@@ -8,7 +8,7 @@ import './css/fondo.css'
 function App() {
   return (
       <Router>
-        <div className="app-container">
+        <div >
           {/* Encabezado con navegación */}
           <header className="main-header">
             <h1>Calculadora - con React</h1>
