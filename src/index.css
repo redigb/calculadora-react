@@ -4,7 +4,8 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background: #f0f4f8;
+  background: linear-gradient(135deg, #f0f4f8, #e6f0fa);
+  overflow: hidden;
 }
 
 .calculator-buttons {
@@ -14,25 +15,89 @@ body {
   max-width: 450px;
   width: 100%;
   padding: 30px;
-  background: linear-gradient(135deg, #e6f0fa, #ffffff);
+  background: linear-gradient(135deg, #ffffff, #f0f4f8);
   border-radius: 25px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 191, 255, 0.2);
-  border: 2px solid #a3bffa;
+  border: 3px solid #a3bffa;
   position: relative;
   overflow: hidden;
   animation: float 4s ease-in-out infinite;
 }
 
-.calculator-buttons::before {
+/* Panda animado */
+.panda-container {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+.panda {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 3px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: bounce 2s infinite;
+}
+
+.panda::before, .panda::after {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(135, 206, 235, 0.2) 0%, transparent 70%);
-  animation: rotate 10s linear infinite;
-  z-index: 0;
+  width: 30px;
+  height: 30px;
+  background: #333;
+  border-radius: 50%;
+  top: 15px;
+}
+
+.panda::before {
+  left: 5px;
+  transform: rotate(15deg);
+}
+
+.panda::after {
+  right: 5px;
+  transform: rotate(-15deg);
+}
+
+.panda .eyes {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  top: 35px;
+  left: 25px;
+  box-shadow: 20px 0 0 #333;
+  animation: blink 3s infinite;
+}
+
+.panda .nose {
+  position: absolute;
+  width: 12px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.panda .ears {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #333;
+  border-radius: 50%;
+  top: -10px;
+  left: 0;
+  box-shadow: 50px 0 0 #333;
 }
 
 .display {
@@ -41,8 +106,9 @@ body {
   font-size: 32px;
   text-align: right;
   background: linear-gradient(135deg, #add8e6, #87ceeb);
-  color: #ffffff;
+  color: #333;
   border-radius: 15px;
+  margin-top: 50px;
   margin-bottom: 20px;
   border: 2px solid #a3bffa;
   box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -76,14 +142,13 @@ body {
   font-size: 22px;
   border: none;
   background: linear-gradient(145deg, #add8e6, #87ceeb); /* Azul claro */
-  color: #ffffff;
+  color: #333;
   cursor: pointer;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .btn::after {
@@ -157,12 +222,18 @@ body {
   50% { transform: translateY(-10px); }
 }
 
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 @keyframes pulse {
   0%, 100% { box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1); }
   50% { box-shadow: inset 0 2px 10px rgba(0, 191, 255, 0.3); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes blink {
+  0%, 90% { transform: scaleY(1); }
+  95% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
 }
