@@ -3,13 +3,13 @@ import CalculatorButtons from "./components/CalculatorButtons";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-import './css/fondo.css'
+//import './css/fondo.css'
 
 function App() {
   return (
       <Router>
         <div className="app-container">
-          {/* Encabezado con navegación */}
+          {/* Encabezado con navegación 
           <header className="main-header">
             <h1>Calculadora - con React</h1>
             <nav>
@@ -22,13 +22,13 @@ function App() {
                 </li>
               </ul>
             </nav>
-          </header>
+          </header>*/}
   
           {/* Contenido principal con las rutas */}
           <main className="main-content">
             <Routes>
-              <Route path="/" element={<CalculadoraView />} /> 
-              <Route path="/puro-css" element={<CalculatorButtons />} /> 
+              <Route path="/" element={<CalculatorButtons />} /> 
+              {/* <Route path="/puro-css" element={<CalculatorButtons />} /> */}
             </Routes>
           </main>
   
