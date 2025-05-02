@@ -14,11 +14,11 @@
 1. Asegúrate de tener **Node.js** y **npm** instalados.
 2. Clona el repositorio:
    ```bash
-   git clone 
+   git clone https://github.com/redigb/calculadora-react.git
    ```
 3. Navega al directorio:
    ```bash
-   cd 
+   cd calculadora-react
    ```
 4. Instala las dependencias:
    ```bash
