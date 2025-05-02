@@ -1,0 +1,9 @@
+
+.polka {
+    background-color: #fefefe;
+    background-image: radial-gradient(#5394fd 1.2px, #ff86cd 1.2px, #fefefe 1.2px); /* Gradientes de puntos con colores */
+    background-size: 24px 24px; 
+    width: 100vw;
+    height: 100vh;
+  }
+  

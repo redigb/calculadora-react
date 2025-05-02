@@ -1,14 +1,9 @@
-import { useState } from 'react'
-
+import './css/diseño.css';
 
 function App() {
-  
-
   return (
-    <>
-      <h1 className='text-xl'> Calculadora - con react </h1>
-    </>
-  )
+    <div className="polka"></div>
+  );
 }
 
-export default App
+export default App;
