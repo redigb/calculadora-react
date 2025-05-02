@@ -14,6 +14,7 @@ A functional calculator built with React, designed for both basic and advanced c
 ## Installation
 
 1. Ensure you have **Node.js** and **npm** installed on your system.
+
 2. Clone the repository:
    ```bash
    git clone https://github.com/redigb/calculadora-react.git
@@ -32,6 +33,7 @@ bash
 
 Copiar
 npm run dev
+
 Open your browser at the provided URL (typically http://localhost:5173).
 Usage
 Click Buttons: Select numbers and operators by clicking.
@@ -42,7 +44,9 @@ React: For building the user interface.
 Vite: Fast build tool for development.
 CSS: For styling the application.
 JavaScript: For calculation logic and state management.
-Contributors
+
+##Contributors
+
 Shakira-leo
 
 Zarai Ramirez Vega
